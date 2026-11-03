@@ -1,0 +1,69 @@
+{
+ "app": "Video Downloader Lab",
+ "versao": "0.1.0",
+ "novidades": [
+  "Primeira versão: cole o link, escolha a qualidade e baixe o vídeo."
+ ],
+ "arquivos": [
+  {
+   "caminho": "downloaderlab.pyw",
+   "origem": "programa/0.1.0/downloaderlab.pyw",
+   "sha256": "30f9686155400055aac80128342b9b89ae3365a08a8f66776ff9127754789b6a",
+   "tamanho": 36490
+  },
+  {
+   "caminho": "downloaderlab.ico",
+   "origem": "programa/0.1.0/downloaderlab.ico",
+   "sha256": "55a2af2d7c50c733567a3599f24713206700f28d56a7a8e6b98f4a89c2f53efb",
+   "tamanho": 24132
+  },
+  {
+   "caminho": "LEIA-ME.txt",
+   "origem": "programa/0.1.0/LEIA-ME.txt",
+   "sha256": "b6d7a6fd6282336b1dccbbbd4da7fa9b05fe961e8a91c3075934298a06ddf89d",
+   "tamanho": 1739
+  },
+  {
+   "caminho": "Instalar Video Downloader Lab.bat",
+   "origem": "programa/0.1.0/Instalar-Video-Downloader-Lab.bat",
+   "sha256": "fb166c87dedf6a3b534e7f5123dcf631b4ea27885c720f56568ec8337a824a29",
+   "tamanho": 8415
+  },
+  {
+   "caminho": "app/__init__.py",
+   "origem": "programa/0.1.0/app/__init__.py",
+   "sha256": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed",
+   "tamanho": 22
+  },
+  {
+   "caminho": "app/downloader.py",
+   "origem": "programa/0.1.0/app/downloader.py",
+   "sha256": "0f8225afd286d835450939c4534cf17b54dab6a2a6014eaa41b500e63aa2a815",
+   "tamanho": 8593
+  },
+  {
+   "caminho": "app/main.py",
+   "origem": "programa/0.1.0/app/main.py",
+   "sha256": "72750b84ac175de1dbbb1deb7119c5fcbb7cc399fefe9435d71e62d19d8759ab",
+   "tamanho": 4521
+  },
+  {
+   "caminho": "app/static/app.js",
+   "origem": "programa/0.1.0/app/static/app.js",
+   "sha256": "f8aaaff785d482d01d01fb1efacd091720ebcb702a49234657eb7d715f410b54",
+   "tamanho": 5873
+  },
+  {
+   "caminho": "app/static/index.html",
+   "origem": "programa/0.1.0/app/static/index.html",
+   "sha256": "6a4b6ff363c7fd894c0d379146458d7224209e1cc8ded00b9c5a39a3542b633d",
+   "tamanho": 1426
+  },
+  {
+   "caminho": "app/static/style.css",
+   "origem": "programa/0.1.0/app/static/style.css",
+   "sha256": "13a3abdbb930e1d181fba45262023e8ce4198e2ecd1ca72dd0f3df8e9c22dcf7",
+   "tamanho": 3006
+  }
+ ]
+}

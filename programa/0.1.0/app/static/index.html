@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video Downloader Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Video Downloader Lab</h1>
+      <p class="subtitle">Cole o link de um vídeo para baixar.</p>
+      <p id="where" class="muted small"></p>
+    </header>
+
+    <form id="url-form" class="url-form">
+      <input id="url" type="url" placeholder="https://..." required autocomplete="off">
+      <button type="submit" id="analyze-btn">Analisar</button>
+    </form>
+    <p id="form-error" class="error" hidden></p>
+
+    <section id="preview" class="card preview" hidden>
+      <img id="thumb" alt="">
+      <div class="preview-body">
+        <h2 id="title"></h2>
+        <p id="meta" class="muted"></p>
+        <div class="actions">
+          <label>Qualidade
+            <select id="quality"></select>
+          </label>
+          <button id="download-btn" type="button">Baixar</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>Downloads</h3>
+      <p id="empty" class="muted">Nenhum download ainda.</p>
+      <ul id="jobs" class="jobs"></ul>
+    </section>
+    <footer class="muted small">Video Downloader Lab · <span id="version"></span> · RLA.dev</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
