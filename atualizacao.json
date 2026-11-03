@@ -1,8 +1,10 @@
 {
  "app": "Video Downloader Lab",
- "versao": "0.1.0",
+ "versao": "0.2.0",
  "novidades": [
-  "Primeira versão: cole o link, escolha a qualidade e baixe o vídeo."
+  "Encontra o vídeo dentro de páginas que mostram um player embutido (por exemplo, um replay com o player do Vimeo).",
+  "Vídeos do Vimeo e outros que vêm em pedaços baixam mais rápido.",
+  "Mensagem em português quando o link não tem vídeo."
  ],
  "arquivos": [
   {
@@ -31,27 +33,33 @@
   },
   {
    "caminho": "app/__init__.py",
-   "origem": "programa/0.1.0/app/__init__.py",
-   "sha256": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed",
+   "origem": "programa/0.2.0/app/__init__.py",
+   "sha256": "667d4a15b970b851e20d17510224670c14646cfb6d5a1e388ca6b9cc6da8bf41",
    "tamanho": 22
   },
   {
    "caminho": "app/downloader.py",
-   "origem": "programa/0.1.0/app/downloader.py",
-   "sha256": "0f8225afd286d835450939c4534cf17b54dab6a2a6014eaa41b500e63aa2a815",
-   "tamanho": 8593
+   "origem": "programa/0.2.0/app/downloader.py",
+   "sha256": "134453e8fbe5d3f700d9c49ba6f2a3b889324994b12e0baf4d33ed5f0536a69d",
+   "tamanho": 10545
   },
   {
    "caminho": "app/main.py",
-   "origem": "programa/0.1.0/app/main.py",
-   "sha256": "72750b84ac175de1dbbb1deb7119c5fcbb7cc399fefe9435d71e62d19d8759ab",
-   "tamanho": 4521
+   "origem": "programa/0.2.0/app/main.py",
+   "sha256": "65e4b217a62ee2e919ab28bcc85310df6a3efc37c2f32f7cb132cd65e39ae01d",
+   "tamanho": 4565
+  },
+  {
+   "caminho": "app/pagina.py",
+   "origem": "programa/0.2.0/app/pagina.py",
+   "sha256": "e6eaec632384e475290a45d562efac47b854cea7af9cd07add628cd4bac46337",
+   "tamanho": 4352
   },
   {
    "caminho": "app/static/app.js",
-   "origem": "programa/0.1.0/app/static/app.js",
-   "sha256": "f8aaaff785d482d01d01fb1efacd091720ebcb702a49234657eb7d715f410b54",
-   "tamanho": 5873
+   "origem": "programa/0.2.0/app/static/app.js",
+   "sha256": "7033b646243d550b1579f957bdd97f50c27d4c63e2d6a8f6e80d7e187fc19603",
+   "tamanho": 6165
   },
   {
    "caminho": "app/static/index.html",
