@@ -1,0 +1,294 @@
+"""Camada de download: encapsula o yt-dlp e gerencia os jobs em segundo plano."""
+
+from __future__ import annotations
+
+import os
+import shutil
+import threading
+import time
+import uuid
+from concurrent.futures import ThreadPoolExecutor
+from dataclasses import asdict, dataclass, field
+from pathlib import Path
+from urllib.parse import urlparse
+
+import yt_dlp
+
+from .pagina import videos_na_pagina
+
+DOWNLOAD_DIR = Path(os.environ.get("DOWNLOAD_DIR", "downloads")).resolve()
+# Cada download acontece numa pasta própria aqui dentro; pronto, o arquivo vai para a DOWNLOAD_DIR.
+TEMP_DIR = DOWNLOAD_DIR / ".baixando"
+MAX_PARALLEL = int(os.environ.get("MAX_PARALLEL_DOWNLOADS", "2"))
+HAS_FFMPEG = shutil.which("ffmpeg") is not None
+
+
+class DownloadError(Exception):
+    """Erro amigável para mostrar ao usuário."""
+
+
+def validate_url(url: str) -> str:
+    url = (url or "").strip()
+    parsed = urlparse(url)
+    if parsed.scheme not in ("http", "https") or not parsed.netloc:
+        raise DownloadError("Informe um link válido começando com http:// ou https://")
+    return url
+
+
+def _base_opts(referer: str | None = None) -> dict:
+    opts = {
+        "quiet": True,
+        "no_warnings": True,
+        "noplaylist": True,  # playlists virão numa etapa futura
+        "noprogress": True,
+    }
+    if referer:
+        # Players embutidos (ex.: Vimeo restrito a um site) só entregam o vídeo para a página onde estão.
+        opts["http_headers"] = {"Referer": referer}
+    return opts
+
+
+def _clean_error(exc: Exception) -> str:
+    msg = str(exc)
+    # yt-dlp prefixa as mensagens com "ERROR: " e códigos de cor
+    for prefix in ("ERROR: ", "\x1b[0;31mERROR:\x1b[0m "):
+        if msg.startswith(prefix):
+            msg = msg[len(prefix):]
+    return msg
+
+
+def _nao_reconhecido(exc: yt_dlp.utils.DownloadError) -> bool:
+    causa = (exc.exc_info or (None, None))[1]
+    return isinstance(causa, yt_dlp.utils.UnsupportedError) or "Unsupported URL" in str(exc)
+
+
+def _extrair(url: str, referer: str | None = None) -> dict:
+    with yt_dlp.YoutubeDL(_base_opts(referer)) as ydl:
+        return ydl.extract_info(url, download=False)
+
+
+def fetch_info(url: str) -> dict:
+    """Busca os metadados do vídeo sem baixar nada. Link que o yt-dlp não reconhece: procura o vídeo dentro da página."""
+    url = validate_url(url)
+    origem, referer, na_pagina = url, None, False
+    try:
+        info = _extrair(url)
+    except yt_dlp.utils.DownloadError as exc:
+        if not _nao_reconhecido(exc):
+            raise DownloadError(_clean_error(exc)) from exc
+        info = None
+        ultimo_erro = None
+        for candidato in videos_na_pagina(url):
+            try:
+                info = _extrair(candidato, referer=url)
+                origem, referer, na_pagina = candidato, url, True
+                break
+            except yt_dlp.utils.DownloadError as exc2:
+                ultimo_erro = exc2
+        if info is None:
+            if ultimo_erro is not None:
+                raise DownloadError("Achei um vídeo na página, mas não consegui abri-lo: "
+                                    + _clean_error(ultimo_erro)) from ultimo_erro
+            detalhe = (" Os detalhes ficaram em logs\\downloaderlab.log, na pasta do app."
+                       if os.environ.get("VDL_DESKTOP") == "1" else "")
+            raise DownloadError("Não encontrei nenhum vídeo nesse link. Confira se o vídeo aparece na página "
+                                "sem precisar entrar com login." + detalhe) from exc
+
+    if info.get("_type") == "playlist":
+        raise DownloadError("Esse link é uma playlist. Por enquanto só baixamos vídeos individuais.")
+
+    heights = sorted(
+        {f["height"] for f in info.get("formats") or [] if f.get("height") and f.get("vcodec") != "none"},
+        reverse=True,
+    )
+    return {
+        "title": info.get("title"),
+        "uploader": info.get("uploader") or info.get("channel"),
+        "duration": info.get("duration"),
+        "thumbnail": info.get("thumbnail"),
+        "platform": info.get("extractor_key"),
+        "webpage_url": origem if na_pagina else (info.get("webpage_url") or url),
+        "referer": referer,
+        "found_in_page": na_pagina,
+        "qualities": heights,
+    }
+
+
+def _format_selector(quality: str) -> str:
+    if not HAS_FFMPEG:
+        # Sem ffmpeg não dá para juntar vídeo e áudio separados: pega um arquivo único.
+        if quality == "best":
+            return "b"
+        return f"b[height<={int(quality)}]/b"
+    if quality == "best":
+        return "bv*+ba/b"
+    h = int(quality)
+    return f"bv*[height<={h}]+ba/b[height<={h}]/bv*+ba/b"
+
+
+@dataclass
+class Job:
+    id: str
+    url: str
+    quality: str
+    referer: str | None = None  # página onde o player está (vídeo encontrado dentro de uma página)
+    status: str = "queued"  # queued | downloading | processing | finished | error
+    title: str | None = None
+    thumbnail: str | None = None
+    progress: float = 0.0  # 0-100 do arquivo atual
+    stage: str = ""  # ex.: "vídeo", "áudio"
+    speed: float | None = None  # bytes/s
+    eta: int | None = None  # segundos
+    downloaded_bytes: int = 0
+    total_bytes: int | None = None
+    filename: str | None = None
+    filesize: int | None = None
+    error: str | None = None
+    created_at: float = field(default_factory=time.time)
+
+    @property
+    def folder(self) -> Path:
+        return TEMP_DIR / self.id
+
+    @property
+    def path(self) -> Path | None:
+        return DOWNLOAD_DIR / self.filename if self.filename else None
+
+    def to_dict(self) -> dict:
+        return asdict(self)
+
+
+class JobManager:
+    def __init__(self) -> None:
+        self._jobs: dict[str, Job] = {}
+        self._lock = threading.Lock()
+        self._pool = ThreadPoolExecutor(max_workers=MAX_PARALLEL)
+        DOWNLOAD_DIR.mkdir(parents=True, exist_ok=True)
+        # Sobras de downloads interrompidos (app fechado no meio)
+        shutil.rmtree(TEMP_DIR, ignore_errors=True)
+
+    def create(self, url: str, quality: str, referer: str | None = None, title: str | None = None,
+               thumbnail: str | None = None) -> Job:
+        url = validate_url(url)
+        referer = validate_url(referer) if referer else None
+        if quality != "best" and not str(quality).isdigit():
+            raise DownloadError("Qualidade inválida.")
+        job = Job(id=uuid.uuid4().hex[:12], url=url, quality=str(quality), referer=referer,
+                  title=(title or None) and str(title)[:300],
+                  thumbnail=thumbnail if thumbnail and urlparse(thumbnail).scheme in ("http", "https") else None)
+        with self._lock:
+            self._jobs[job.id] = job
+        self._pool.submit(self._run, job)
+        return job
+
+    def get(self, job_id: str) -> Job | None:
+        with self._lock:
+            return self._jobs.get(job_id)
+
+    def ocupado(self) -> bool:
+        with self._lock:
+            return any(j.status in ("queued", "downloading", "processing") for j in self._jobs.values())
+
+    def all(self) -> list[Job]:
+        with self._lock:
+            return sorted(self._jobs.values(), key=lambda j: j.created_at, reverse=True)
+
+    # ---- execução -------------------------------------------------------
+
+    def _run(self, job: Job) -> None:
+        job.folder.mkdir(parents=True, exist_ok=True)
+        stream_count = {"n": 0}
+
+        def progress_hook(d: dict) -> None:
+            status = d.get("status")
+            if status == "downloading":
+                if job.status != "downloading":
+                    job.status = "downloading"
+                info = d.get("info_dict") or {}
+                job.title = job.title or info.get("title")
+                job.thumbnail = job.thumbnail or info.get("thumbnail")
+                if info.get("vcodec") not in (None, "none"):
+                    job.stage = "vídeo"
+                elif info.get("acodec") not in (None, "none"):
+                    job.stage = "áudio"
+                total = d.get("total_bytes") or d.get("total_bytes_estimate")
+                done = d.get("downloaded_bytes") or 0
+                job.total_bytes = int(total) if total else None
+                job.downloaded_bytes = int(done)
+                job.progress = round(done / total * 100, 1) if total else 0.0
+                job.speed = d.get("speed")
+                job.eta = d.get("eta")
+            elif status == "finished":
+                stream_count["n"] += 1
+                job.progress = 100.0
+                job.speed = None
+                job.eta = None
+
+        def postprocessor_hook(d: dict) -> None:
+            if d.get("status") == "started":
+                job.status = "processing"
+                job.stage = "finalizando"
+
+        opts = {
+            **_base_opts(job.referer),
+            "format": _format_selector(job.quality),
+            # Vídeos em pedacinhos (HLS/DASH, como o Vimeo): baixa 4 pedaços por vez em vez de um.
+            "concurrent_fragment_downloads": 4,
+            "outtmpl": str(job.folder / "%(title).150B [%(id)s].%(ext)s"),
+            "restrictfilenames": False,
+            "windowsfilenames": True,
+            "progress_hooks": [progress_hook],
+            "postprocessor_hooks": [postprocessor_hook],
+        }
+        if HAS_FFMPEG:
+            opts["merge_output_format"] = "mp4"
+
+        try:
+            with yt_dlp.YoutubeDL(opts) as ydl:
+                info = ydl.extract_info(job.url, download=True)
+                job.title = info.get("title") or job.title
+            final = self._find_output(job.folder)
+            if final is None:
+                raise DownloadError("O download terminou, mas o arquivo não foi encontrado.")
+            destino = self._move_to_downloads(final)
+            job.filename = destino.name
+            job.filesize = destino.stat().st_size
+            job.progress = 100.0
+            job.stage = ""
+            job.status = "finished"
+        except yt_dlp.utils.DownloadError as exc:
+            job.status = "error"
+            job.error = _clean_error(exc)
+        except Exception as exc:  # noqa: BLE001 - mostrar qualquer falha ao usuário
+            job.status = "error"
+            job.error = str(exc) or exc.__class__.__name__
+        finally:
+            shutil.rmtree(job.folder, ignore_errors=True)
+            try:
+                TEMP_DIR.rmdir()  # some quando não há outro download em andamento
+            except OSError:
+                pass
+
+    _move_lock = threading.Lock()
+
+    def _move_to_downloads(self, src: Path) -> Path:
+        """Move para a pasta de downloads sem sobrescrever: "Nome (2).mp4" se já existir."""
+        with self._move_lock:
+            dest = DOWNLOAD_DIR / src.name
+            n = 2
+            while dest.exists():
+                dest = DOWNLOAD_DIR / f"{src.stem} ({n}){src.suffix}"
+                n += 1
+            shutil.move(str(src), dest)
+            return dest
+
+    @staticmethod
+    def _find_output(folder: Path) -> Path | None:
+        candidates = [
+            p for p in folder.iterdir()
+            if p.is_file() and not p.name.endswith((".part", ".ytdl", ".temp"))
+        ]
+        return max(candidates, key=lambda p: p.stat().st_size, default=None)
+
+
+manager = JobManager()

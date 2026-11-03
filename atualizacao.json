@@ -1,10 +1,10 @@
 {
  "app": "Video Downloader Lab",
- "versao": "0.3.0",
+ "versao": "0.3.1",
  "novidades": [
+  "Corrige a busca do vídeo dentro de páginas quando o Microsoft Edge já está aberto no computador.",
   "Visual novo, no padrão dos apps RLA.dev, com tema claro e escuro.",
-  "Botão de atualização: o app avisa quando há versão nova e se atualiza sozinho, sem rodar o instalador de novo.",
-  "Ícone novo."
+  "Botão de atualização: o app avisa quando há versão nova e se atualiza sozinho, sem rodar o instalador de novo."
  ],
  "arquivos": [
   {
@@ -33,15 +33,15 @@
   },
   {
    "caminho": "app/__init__.py",
-   "origem": "programa/0.3.0/app/__init__.py",
-   "sha256": "56b5e91c3bb77ab933c25fd65eba883419bdc5691cc94cb9dc840e8f4e3674eb",
+   "origem": "programa/0.3.1/app/__init__.py",
+   "sha256": "af8c4016284e7fbd96f530fe969322ea7b564932933f64a5cca3f5cad92345b2",
    "tamanho": 22
   },
   {
    "caminho": "app/downloader.py",
-   "origem": "programa/0.3.0/app/downloader.py",
-   "sha256": "f5bd1fc2ca1a9fb55cb9cff4751a40ee97a12acebded0c1a27418043657f406a",
-   "tamanho": 11058
+   "origem": "programa/0.3.1/app/downloader.py",
+   "sha256": "1545b84979b175300d5e98545f54ee371440d8e7d0615577ee2b12b587c55556",
+   "tamanho": 11231
   },
   {
    "caminho": "app/main.py",
@@ -51,9 +51,9 @@
   },
   {
    "caminho": "app/pagina.py",
-   "origem": "programa/0.2.0/app/pagina.py",
-   "sha256": "e6eaec632384e475290a45d562efac47b854cea7af9cd07add628cd4bac46337",
-   "tamanho": 4352
+   "origem": "programa/0.3.1/app/pagina.py",
+   "sha256": "024362bf0048aecfca31204fe9c0026acda68032ab58e9a2795a09dc79b4faf3",
+   "tamanho": 7398
   },
   {
    "caminho": "app/static/app.js",
