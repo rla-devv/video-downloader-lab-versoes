@@ -1,20 +1,17 @@
 {
  "app": "Video Downloader Lab",
- "versao": "0.4.0",
+ "versao": "0.5.0",
  "novidades": [
-  "Só o áudio: baixe em MP3 (320, 192 ou 128 kbps), M4A ou no formato original.",
-  "Escolha o formato do vídeo: MP4, MKV, WebM ou o original do site.",
-  "Legendas: dentro do vídeo ou em arquivo .srt, no idioma que você escolher.",
-  "Baixe só um trecho do vídeo, com corte exato se quiser.",
-  "Playlists e canais: marque os vídeos que quiser e baixe todos de uma vez, numa pasta com o nome da playlist.",
-  "Capa e informações dentro do arquivo, e botão para cancelar downloads."
+  "Cole vários links de uma vez, um por linha: o app monta a lista e baixa todos.",
+  "Entrar com a sua conta: usa o login do seu navegador (ou um arquivo cookies.txt) para vídeos que o Instagram, o Facebook e outros sites só mostram para quem está logado.",
+  "Avisos claros quando o link é de um perfil inteiro do Instagram ou do Facebook, que não dá para baixar."
  ],
  "arquivos": [
   {
    "caminho": "downloaderlab.pyw",
-   "origem": "programa/0.3.0/downloaderlab.pyw",
-   "sha256": "ca4fb0ca11695cbcb428eb571dae1c6339af3066614b1a6d2a7a8f600c21fe01",
-   "tamanho": 43283
+   "origem": "programa/0.5.0/downloaderlab.pyw",
+   "sha256": "d1b898ebcd2ba634be12a9b7533975219ac619d6893e9831ec83059f4601d6e7",
+   "tamanho": 43401
   },
   {
    "caminho": "LEIA-ME.txt",
@@ -36,21 +33,21 @@
   },
   {
    "caminho": "app/__init__.py",
-   "origem": "programa/0.4.0/app/__init__.py",
-   "sha256": "e364931a8afff672985ee99f795e6d8b20ff33c55d71d757ec211ec6689b3c19",
+   "origem": "programa/0.5.0/app/__init__.py",
+   "sha256": "2c12b8ea17aeb6f9f72a6b02aca218bbc4508a46df9e365a8f6c45ad769e0b34",
    "tamanho": 22
   },
   {
    "caminho": "app/downloader.py",
-   "origem": "programa/0.4.0/app/downloader.py",
-   "sha256": "6e460b262e82a3f707c31959b83c496a565dea475e5aee78c6cba20fc319c938",
-   "tamanho": 30479
+   "origem": "programa/0.5.0/app/downloader.py",
+   "sha256": "f85e272ee4c6cfc71fe36061466fe2b66c009cc8752ecb3fa7c01a0f69272b02",
+   "tamanho": 37567
   },
   {
    "caminho": "app/main.py",
-   "origem": "programa/0.4.0/app/main.py",
-   "sha256": "db92222a5ddeff2c84afa489829acf7947f8635d4e45b93d0354a1567a87eb27",
-   "tamanho": 8818
+   "origem": "programa/0.5.0/app/main.py",
+   "sha256": "b52450a80e038e44b520608875d93ba12ca73eee9be7208c05bfb69d2c930ac4",
+   "tamanho": 9871
   },
   {
    "caminho": "app/pagina.py",
@@ -60,9 +57,9 @@
   },
   {
    "caminho": "app/static/app.js",
-   "origem": "programa/0.4.0/app/static/app.js",
-   "sha256": "b68c892a568cc61f1ffe508f8a7945bceb113edea5e3bd614f811c25562f7982",
-   "tamanho": 27145
+   "origem": "programa/0.5.0/app/static/app.js",
+   "sha256": "ccf8167f24ce0621b33ec6050774c9af49a87de62673fb10ede8b4bd770f3c8a",
+   "tamanho": 31355
   },
   {
    "caminho": "app/static/fontes/bricolage-grotesque-latin.woff2",
@@ -84,9 +81,9 @@
   },
   {
    "caminho": "app/static/index.html",
-   "origem": "programa/0.4.0/app/static/index.html",
-   "sha256": "1c0536b56087ce3a7be170d928e3586f62c6a954ab538c9dfd31b202a5887480",
-   "tamanho": 14373
+   "origem": "programa/0.5.0/app/static/index.html",
+   "sha256": "80ac5a35f05e24ee678496fdae93f01dba766ed92e669a2ee1ca9731943c11bd",
+   "tamanho": 16380
   },
   {
    "caminho": "app/static/logo.png",
@@ -96,9 +93,9 @@
   },
   {
    "caminho": "app/static/style.css",
-   "origem": "programa/0.4.0/app/static/style.css",
-   "sha256": "3e7810d6c267492f36aacbde7e9f1dcf6738f2c57aabb5774761e0ac1ff61dd2",
-   "tamanho": 24384
+   "origem": "programa/0.5.0/app/static/style.css",
+   "sha256": "36cea9005d011830698dc89aff3efa05e383e415724d5827e2460d6ac1f9acba",
+   "tamanho": 25194
   }
  ]
 }
