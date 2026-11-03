@@ -1,17 +1,16 @@
 {
  "app": "Video Downloader Lab",
- "versao": "0.5.0",
+ "versao": "0.5.1",
  "novidades": [
-  "Cole vários links de uma vez, um por linha: o app monta a lista e baixa todos.",
-  "Entrar com a sua conta: usa o login do seu navegador (ou um arquivo cookies.txt) para vídeos que o Instagram, o Facebook e outros sites só mostram para quem está logado.",
-  "Avisos claros quando o link é de um perfil inteiro do Instagram ou do Facebook, que não dá para baixar."
+  "Correções de segurança: só a janela do app pode usar o servidor local, proteção extra contra páginas maliciosas e o arquivo cookies.txt nunca é regravado.",
+  "O instalador sempre confere o programa antes de rodar."
  ],
  "arquivos": [
   {
    "caminho": "downloaderlab.pyw",
-   "origem": "programa/0.5.0/downloaderlab.pyw",
-   "sha256": "d1b898ebcd2ba634be12a9b7533975219ac619d6893e9831ec83059f4601d6e7",
-   "tamanho": 43401
+   "origem": "programa/0.5.1/downloaderlab.pyw",
+   "sha256": "d7ec2e65ed9bb4064154dd34bf652bff6377ca1ec13ae959087c1e039696a246",
+   "tamanho": 44292
   },
   {
    "caminho": "LEIA-ME.txt",
@@ -21,9 +20,9 @@
   },
   {
    "caminho": "Instalar Video Downloader Lab.bat",
-   "origem": "programa/0.3.0/Instalar-Video-Downloader-Lab.bat",
-   "sha256": "3da945e9a556c8b7a04bce30882d55c9b6b8f71a03f53000f68bc807c906c99c",
-   "tamanho": 8378
+   "origem": "programa/0.5.1/Instalar-Video-Downloader-Lab.bat",
+   "sha256": "bab72199eb0473308b509e7ea46bcd590f90a97c6c7f423929f501a8af1a4b83",
+   "tamanho": 8541
   },
   {
    "caminho": "downloaderlab-2.ico",
@@ -33,27 +32,27 @@
   },
   {
    "caminho": "app/__init__.py",
-   "origem": "programa/0.5.0/app/__init__.py",
-   "sha256": "2c12b8ea17aeb6f9f72a6b02aca218bbc4508a46df9e365a8f6c45ad769e0b34",
+   "origem": "programa/0.5.1/app/__init__.py",
+   "sha256": "799d5b3ae9f50c3555d182ce056e308f614fd5a8d178b8db22b1a6ccdec0481c",
    "tamanho": 22
   },
   {
    "caminho": "app/downloader.py",
-   "origem": "programa/0.5.0/app/downloader.py",
-   "sha256": "f85e272ee4c6cfc71fe36061466fe2b66c009cc8752ecb3fa7c01a0f69272b02",
-   "tamanho": 37567
+   "origem": "programa/0.5.1/app/downloader.py",
+   "sha256": "f58d335143c8cf72649c226193233dafe3fb7814152a42b5e2b9f0f1e045b245",
+   "tamanho": 38742
   },
   {
    "caminho": "app/main.py",
-   "origem": "programa/0.5.0/app/main.py",
-   "sha256": "b52450a80e038e44b520608875d93ba12ca73eee9be7208c05bfb69d2c930ac4",
-   "tamanho": 9871
+   "origem": "programa/0.5.1/app/main.py",
+   "sha256": "e143c8d1bdae221bb2327a51368b657637e2f08c4930a6688196c3f9e68f5855",
+   "tamanho": 11783
   },
   {
    "caminho": "app/pagina.py",
-   "origem": "programa/0.3.1/app/pagina.py",
-   "sha256": "024362bf0048aecfca31204fe9c0026acda68032ab58e9a2795a09dc79b4faf3",
-   "tamanho": 7398
+   "origem": "programa/0.5.1/app/pagina.py",
+   "sha256": "bbfe28d0819c05f83113f46c708334093ddba6f1f536f40b3e24e578f576ba20",
+   "tamanho": 8203
   },
   {
    "caminho": "app/static/app.js",
