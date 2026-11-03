@@ -1,53 +1,53 @@
 {
  "app": "Video Downloader Lab",
- "versao": "0.2.0",
+ "versao": "0.3.0",
  "novidades": [
-  "Encontra o vídeo dentro de páginas que mostram um player embutido (por exemplo, um replay com o player do Vimeo).",
-  "Vídeos do Vimeo e outros que vêm em pedaços baixam mais rápido.",
-  "Mensagem em português quando o link não tem vídeo."
+  "Visual novo, no padrão dos apps RLA.dev, com tema claro e escuro.",
+  "Botão de atualização: o app avisa quando há versão nova e se atualiza sozinho, sem rodar o instalador de novo.",
+  "Ícone novo."
  ],
  "arquivos": [
   {
    "caminho": "downloaderlab.pyw",
-   "origem": "programa/0.1.0/downloaderlab.pyw",
-   "sha256": "30f9686155400055aac80128342b9b89ae3365a08a8f66776ff9127754789b6a",
-   "tamanho": 36490
-  },
-  {
-   "caminho": "downloaderlab.ico",
-   "origem": "programa/0.1.0/downloaderlab.ico",
-   "sha256": "55a2af2d7c50c733567a3599f24713206700f28d56a7a8e6b98f4a89c2f53efb",
-   "tamanho": 24132
+   "origem": "programa/0.3.0/downloaderlab.pyw",
+   "sha256": "ca4fb0ca11695cbcb428eb571dae1c6339af3066614b1a6d2a7a8f600c21fe01",
+   "tamanho": 43283
   },
   {
    "caminho": "LEIA-ME.txt",
-   "origem": "programa/0.1.0/LEIA-ME.txt",
-   "sha256": "b6d7a6fd6282336b1dccbbbd4da7fa9b05fe961e8a91c3075934298a06ddf89d",
-   "tamanho": 1739
+   "origem": "programa/0.3.0/LEIA-ME.txt",
+   "sha256": "3261af0f0e103f9b7ddc17a428ec29796fd04d0025ab1c02f67db230f97f801c",
+   "tamanho": 1824
   },
   {
    "caminho": "Instalar Video Downloader Lab.bat",
-   "origem": "programa/0.1.0/Instalar-Video-Downloader-Lab.bat",
-   "sha256": "fb166c87dedf6a3b534e7f5123dcf631b4ea27885c720f56568ec8337a824a29",
-   "tamanho": 8415
+   "origem": "programa/0.3.0/Instalar-Video-Downloader-Lab.bat",
+   "sha256": "3da945e9a556c8b7a04bce30882d55c9b6b8f71a03f53000f68bc807c906c99c",
+   "tamanho": 8378
+  },
+  {
+   "caminho": "downloaderlab-2.ico",
+   "origem": "programa/0.3.0/downloaderlab-2.ico",
+   "sha256": "17262936c9b48bf577aaf7204293e6921b155e57b258adf3594de513d069e5a5",
+   "tamanho": 72886
   },
   {
    "caminho": "app/__init__.py",
-   "origem": "programa/0.2.0/app/__init__.py",
-   "sha256": "667d4a15b970b851e20d17510224670c14646cfb6d5a1e388ca6b9cc6da8bf41",
+   "origem": "programa/0.3.0/app/__init__.py",
+   "sha256": "56b5e91c3bb77ab933c25fd65eba883419bdc5691cc94cb9dc840e8f4e3674eb",
    "tamanho": 22
   },
   {
    "caminho": "app/downloader.py",
-   "origem": "programa/0.2.0/app/downloader.py",
-   "sha256": "134453e8fbe5d3f700d9c49ba6f2a3b889324994b12e0baf4d33ed5f0536a69d",
-   "tamanho": 10545
+   "origem": "programa/0.3.0/app/downloader.py",
+   "sha256": "f5bd1fc2ca1a9fb55cb9cff4751a40ee97a12acebded0c1a27418043657f406a",
+   "tamanho": 11058
   },
   {
    "caminho": "app/main.py",
-   "origem": "programa/0.2.0/app/main.py",
-   "sha256": "65e4b217a62ee2e919ab28bcc85310df6a3efc37c2f32f7cb132cd65e39ae01d",
-   "tamanho": 4565
+   "origem": "programa/0.3.0/app/main.py",
+   "sha256": "848aff3385358bdd3e8aa7132d80abaff27fbd23e2c7a28fc99c77f84625685b",
+   "tamanho": 7188
   },
   {
    "caminho": "app/pagina.py",
@@ -57,21 +57,45 @@
   },
   {
    "caminho": "app/static/app.js",
-   "origem": "programa/0.2.0/app/static/app.js",
-   "sha256": "7033b646243d550b1579f957bdd97f50c27d4c63e2d6a8f6e80d7e187fc19603",
-   "tamanho": 6165
+   "origem": "programa/0.3.0/app/static/app.js",
+   "sha256": "b4da653bb95d1bca46726cebc242f1cb8e03cd098fbb3881bdc8b093e7633891",
+   "tamanho": 18316
+  },
+  {
+   "caminho": "app/static/fontes/bricolage-grotesque-latin.woff2",
+   "origem": "programa/0.3.0/app/static/fontes/bricolage-grotesque-latin.woff2",
+   "sha256": "a79fdb52d4a5c76552452f69202add96e287401fff03d3e8c0e38b4dcb5a99cd",
+   "tamanho": 76888
+  },
+  {
+   "caminho": "app/static/fontes/figtree-latin.woff2",
+   "origem": "programa/0.3.0/app/static/fontes/figtree-latin.woff2",
+   "sha256": "4ba7d3d096695818fe0686be4f1e82c6b05134e18a22260336130335027462dd",
+   "tamanho": 20156
+  },
+  {
+   "caminho": "app/static/fontes/jetbrains-mono-latin.woff2",
+   "origem": "programa/0.3.0/app/static/fontes/jetbrains-mono-latin.woff2",
+   "sha256": "83c005d49d8a6a50474c73a5a36ac0468076e9c4a29da7bdb14995d80560a5be",
+   "tamanho": 31432
   },
   {
    "caminho": "app/static/index.html",
-   "origem": "programa/0.1.0/app/static/index.html",
-   "sha256": "6a4b6ff363c7fd894c0d379146458d7224209e1cc8ded00b9c5a39a3542b633d",
-   "tamanho": 1426
+   "origem": "programa/0.3.0/app/static/index.html",
+   "sha256": "c9bbb6a0420c561c6b258651ed5daebb396df10a755670521917554f0cd4b0e9",
+   "tamanho": 10020
+  },
+  {
+   "caminho": "app/static/logo.png",
+   "origem": "programa/0.3.0/app/static/logo.png",
+   "sha256": "ac9eecee087fccbda6e02acd6fa4862c4c5faf89fa3789b40d2db584ad9090de",
+   "tamanho": 9831
   },
   {
    "caminho": "app/static/style.css",
-   "origem": "programa/0.1.0/app/static/style.css",
-   "sha256": "13a3abdbb930e1d181fba45262023e8ce4198e2ecd1ca72dd0f3df8e9c22dcf7",
-   "tamanho": 3006
+   "origem": "programa/0.3.0/app/static/style.css",
+   "sha256": "e27a8f57d447254275c242c888076ad1e9f0eb32b0aece109f4738cd57eb8cdf",
+   "tamanho": 20266
   }
  ]
 }

@@ -11,6 +11,6 @@ Baixe vídeos de várias plataformas direto no seu computador. Desenvolvido por 
    (o portátil oficial do python.org), o yt-dlp, o ffmpeg e a janela do programa, confere cada arquivo pelo SHA-256 e
    cria o atalho "Video Downloader Lab" na Área de Trabalho e no Menu Iniciar.
 
-Versão atual: **0.2.0**
+Versão atual: **0.3.0**
 
 Use só para conteúdo que você tem direito de baixar e respeite os termos de cada plataforma.

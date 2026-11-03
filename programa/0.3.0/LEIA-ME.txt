@@ -1,0 +1,30 @@
+Video Downloader Lab (Windows)
+==============================
+
+Instalar (só na primeira vez)
+- Dê dois cliques em "Instalar Video Downloader Lab". Não precisa instalar nada antes: ele baixa
+  um Python só para o Video Downloader Lab (o oficial do python.org, na pasta python), o yt-dlp,
+  o ffmpeg e a janela do programa, confere cada arquivo antes de usar e cria o atalho
+  "Video Downloader Lab" na Área de Trabalho e no Menu Iniciar. Ao terminar, o app abre sozinho.
+
+Usar
+- Abra pelo atalho "Abrir Video Downloader Lab", aqui nesta pasta, ou pelo atalho
+  "Video Downloader Lab" na Área de Trabalho e no Menu Iniciar.
+- Cole o link do vídeo, clique em Analisar, escolha a qualidade e clique em Baixar.
+- Os vídeos ficam na pasta Downloads, em "Video Downloader Lab".
+- Se o atalho sumir, rode o "Instalar Video Downloader Lab" de novo: é rápido e não apaga nada.
+
+Como funciona
+- O app usa o WebView2, o mesmo motor do Microsoft Edge, que já vem no Windows 10 e 11.
+- Um servidor só deste computador (127.0.0.1) entrega a página. Nada fica acessível pela rede.
+- Os sites mudam com frequência: o yt-dlp (o componente que baixa os vídeos) é atualizado
+  sozinho uma vez por dia, quando você fecha o app.
+- Atualizações: o app avisa no botão "Buscar atualização" quando há versão nova e só instala
+  quando você confirma. Ele confere os arquivos baixados antes de trocar e guarda a versão
+  anterior em versoes-anteriores (dá para voltar pelo mesmo botão).
+- Mensagens de erro ficam em logs\downloaderlab.log.
+
+Use só para conteúdo que você tem direito de baixar e respeite os termos de cada plataforma.
+Conteúdo protegido (Netflix, Disney+, Spotify e afins) não é suportado.
+
+Desenvolvido por RLA.dev · Apoie: https://link.mercadopago.com.br/rladevapps
