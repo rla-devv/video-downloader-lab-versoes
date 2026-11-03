@@ -1,10 +1,13 @@
 {
  "app": "Video Downloader Lab",
- "versao": "0.3.1",
+ "versao": "0.4.0",
  "novidades": [
-  "Corrige a busca do vídeo dentro de páginas quando o Microsoft Edge já está aberto no computador.",
-  "Visual novo, no padrão dos apps RLA.dev, com tema claro e escuro.",
-  "Botão de atualização: o app avisa quando há versão nova e se atualiza sozinho, sem rodar o instalador de novo."
+  "Só o áudio: baixe em MP3 (320, 192 ou 128 kbps), M4A ou no formato original.",
+  "Escolha o formato do vídeo: MP4, MKV, WebM ou o original do site.",
+  "Legendas: dentro do vídeo ou em arquivo .srt, no idioma que você escolher.",
+  "Baixe só um trecho do vídeo, com corte exato se quiser.",
+  "Playlists e canais: marque os vídeos que quiser e baixe todos de uma vez, numa pasta com o nome da playlist.",
+  "Capa e informações dentro do arquivo, e botão para cancelar downloads."
  ],
  "arquivos": [
   {
@@ -33,21 +36,21 @@
   },
   {
    "caminho": "app/__init__.py",
-   "origem": "programa/0.3.1/app/__init__.py",
-   "sha256": "af8c4016284e7fbd96f530fe969322ea7b564932933f64a5cca3f5cad92345b2",
+   "origem": "programa/0.4.0/app/__init__.py",
+   "sha256": "e364931a8afff672985ee99f795e6d8b20ff33c55d71d757ec211ec6689b3c19",
    "tamanho": 22
   },
   {
    "caminho": "app/downloader.py",
-   "origem": "programa/0.3.1/app/downloader.py",
-   "sha256": "1545b84979b175300d5e98545f54ee371440d8e7d0615577ee2b12b587c55556",
-   "tamanho": 11231
+   "origem": "programa/0.4.0/app/downloader.py",
+   "sha256": "6e460b262e82a3f707c31959b83c496a565dea475e5aee78c6cba20fc319c938",
+   "tamanho": 30479
   },
   {
    "caminho": "app/main.py",
-   "origem": "programa/0.3.0/app/main.py",
-   "sha256": "848aff3385358bdd3e8aa7132d80abaff27fbd23e2c7a28fc99c77f84625685b",
-   "tamanho": 7188
+   "origem": "programa/0.4.0/app/main.py",
+   "sha256": "db92222a5ddeff2c84afa489829acf7947f8635d4e45b93d0354a1567a87eb27",
+   "tamanho": 8818
   },
   {
    "caminho": "app/pagina.py",
@@ -57,9 +60,9 @@
   },
   {
    "caminho": "app/static/app.js",
-   "origem": "programa/0.3.0/app/static/app.js",
-   "sha256": "b4da653bb95d1bca46726cebc242f1cb8e03cd098fbb3881bdc8b093e7633891",
-   "tamanho": 18316
+   "origem": "programa/0.4.0/app/static/app.js",
+   "sha256": "b68c892a568cc61f1ffe508f8a7945bceb113edea5e3bd614f811c25562f7982",
+   "tamanho": 27145
   },
   {
    "caminho": "app/static/fontes/bricolage-grotesque-latin.woff2",
@@ -81,9 +84,9 @@
   },
   {
    "caminho": "app/static/index.html",
-   "origem": "programa/0.3.0/app/static/index.html",
-   "sha256": "c9bbb6a0420c561c6b258651ed5daebb396df10a755670521917554f0cd4b0e9",
-   "tamanho": 10020
+   "origem": "programa/0.4.0/app/static/index.html",
+   "sha256": "1c0536b56087ce3a7be170d928e3586f62c6a954ab538c9dfd31b202a5887480",
+   "tamanho": 14373
   },
   {
    "caminho": "app/static/logo.png",
@@ -93,9 +96,9 @@
   },
   {
    "caminho": "app/static/style.css",
-   "origem": "programa/0.3.0/app/static/style.css",
-   "sha256": "e27a8f57d447254275c242c888076ad1e9f0eb32b0aece109f4738cd57eb8cdf",
-   "tamanho": 20266
+   "origem": "programa/0.4.0/app/static/style.css",
+   "sha256": "3e7810d6c267492f36aacbde7e9f1dcf6738f2c57aabb5774761e0ac1ff61dd2",
+   "tamanho": 24384
   }
  ]
 }
