@@ -1,22 +1,22 @@
 {
  "app": "Video Downloader Lab",
- "versao": "0.6.0",
+ "versao": "0.7.0",
  "novidades": [
-  "Os apps da RLA.dev agora ficam todos juntos em C:\\rla-lab, fora da pasta Downloads. O app oferece mudar de pasta sozinho; seus vídeos continuam onde estão.",
-  "O instalador sempre instala em C:\\rla-lab, sem pedir administrador, com a pasta protegida só para você."
+  "Tudo do app fica junto em C:\\rla-lab\\Video Downloader Lab: os vídeos vão para a pasta Vídeos dentro dela.",
+  "Os vídeos que estavam em Downloads\\Video Downloader Lab mudam para lá sozinhos, uma vez (nada é apagado nem sobrescrito)."
  ],
  "arquivos": [
   {
    "caminho": "downloaderlab.pyw",
-   "origem": "programa/0.6.0/downloaderlab.pyw",
-   "sha256": "7c021db8c20237eff0be46ac292b3198eddd6ccd6b78690cb587e4462cdd09c1",
-   "tamanho": 52489
+   "origem": "programa/0.7.0/downloaderlab.pyw",
+   "sha256": "417e3af9896ae474cf116e801200033662757f69f7f24166b21fd69fb1c831e3",
+   "tamanho": 56219
   },
   {
    "caminho": "LEIA-ME.txt",
-   "origem": "programa/0.6.0/LEIA-ME.txt",
-   "sha256": "ca36e870a9d56ab35e03382574c891ccf356d0d6fd5ae6227d2dd910052c718f",
-   "tamanho": 1993
+   "origem": "programa/0.7.0/LEIA-ME.txt",
+   "sha256": "b37343be3b5b5323bc95b393c8913d1c9d2e221a746896f96a1af3a9b6d0ccec",
+   "tamanho": 2024
   },
   {
    "caminho": "Instalar Video Downloader Lab.bat",
@@ -32,8 +32,8 @@
   },
   {
    "caminho": "app/__init__.py",
-   "origem": "programa/0.6.0/app/__init__.py",
-   "sha256": "7080f58cb9c2fef8f8f0680c37a61bd4503726c43de73366087991604f131616",
+   "origem": "programa/0.7.0/app/__init__.py",
+   "sha256": "45a00d19b46ee5efaf7a1c17235f907b68203cf7ecd5341a663d3bd8975b2e4e",
    "tamanho": 22
   },
   {
@@ -56,9 +56,9 @@
   },
   {
    "caminho": "app/static/app.js",
-   "origem": "programa/0.6.0/app/static/app.js",
-   "sha256": "2dc58d2c572756e03e6bd866fb681ec2b6c124325d0fe8ae523eb2cf4813959c",
-   "tamanho": 33082
+   "origem": "programa/0.7.0/app/static/app.js",
+   "sha256": "0c9b4882d8ff27ece44d572f6f977b4cb48cac19d375c22799527d8d9d700eab",
+   "tamanho": 34083
   },
   {
    "caminho": "app/static/fontes/bricolage-grotesque-latin.woff2",
@@ -80,9 +80,9 @@
   },
   {
    "caminho": "app/static/index.html",
-   "origem": "programa/0.6.0/app/static/index.html",
-   "sha256": "0a608e56d619a7091c3573be91b399cfd127548410a8c3f52a3651641f5a7973",
-   "tamanho": 17544
+   "origem": "programa/0.7.0/app/static/index.html",
+   "sha256": "9e5d1f733989051954682c83e6db1c2ff5b27569d9ab1131645f9578cd02ab25",
+   "tamanho": 17597
   },
   {
    "caminho": "app/static/logo.png",
