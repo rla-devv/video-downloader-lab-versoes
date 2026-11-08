@@ -1,28 +1,28 @@
 {
  "app": "Video Downloader Lab",
- "versao": "0.5.1",
+ "versao": "0.6.0",
  "novidades": [
-  "Correções de segurança: só a janela do app pode usar o servidor local, proteção extra contra páginas maliciosas e o arquivo cookies.txt nunca é regravado.",
-  "O instalador sempre confere o programa antes de rodar."
+  "Os apps da RLA.dev agora ficam todos juntos em C:\\rla-lab, fora da pasta Downloads. O app oferece mudar de pasta sozinho; seus vídeos continuam onde estão.",
+  "O instalador sempre instala em C:\\rla-lab, sem pedir administrador, com a pasta protegida só para você."
  ],
  "arquivos": [
   {
    "caminho": "downloaderlab.pyw",
-   "origem": "programa/0.5.1/downloaderlab.pyw",
-   "sha256": "d7ec2e65ed9bb4064154dd34bf652bff6377ca1ec13ae959087c1e039696a246",
-   "tamanho": 44292
+   "origem": "programa/0.6.0/downloaderlab.pyw",
+   "sha256": "7c021db8c20237eff0be46ac292b3198eddd6ccd6b78690cb587e4462cdd09c1",
+   "tamanho": 52489
   },
   {
    "caminho": "LEIA-ME.txt",
-   "origem": "programa/0.3.0/LEIA-ME.txt",
-   "sha256": "3261af0f0e103f9b7ddc17a428ec29796fd04d0025ab1c02f67db230f97f801c",
-   "tamanho": 1824
+   "origem": "programa/0.6.0/LEIA-ME.txt",
+   "sha256": "ca36e870a9d56ab35e03382574c891ccf356d0d6fd5ae6227d2dd910052c718f",
+   "tamanho": 1993
   },
   {
    "caminho": "Instalar Video Downloader Lab.bat",
-   "origem": "programa/0.5.1/Instalar-Video-Downloader-Lab.bat",
-   "sha256": "bab72199eb0473308b509e7ea46bcd590f90a97c6c7f423929f501a8af1a4b83",
-   "tamanho": 8541
+   "origem": "programa/0.6.0/Instalar-Video-Downloader-Lab.bat",
+   "sha256": "a6f9aa55f67cd9b4d855b750ac2cff86362a26dddac7237f1954cf4b31f28a45",
+   "tamanho": 7237
   },
   {
    "caminho": "downloaderlab-2.ico",
@@ -32,8 +32,8 @@
   },
   {
    "caminho": "app/__init__.py",
-   "origem": "programa/0.5.1/app/__init__.py",
-   "sha256": "799d5b3ae9f50c3555d182ce056e308f614fd5a8d178b8db22b1a6ccdec0481c",
+   "origem": "programa/0.6.0/app/__init__.py",
+   "sha256": "7080f58cb9c2fef8f8f0680c37a61bd4503726c43de73366087991604f131616",
    "tamanho": 22
   },
   {
@@ -44,9 +44,9 @@
   },
   {
    "caminho": "app/main.py",
-   "origem": "programa/0.5.1/app/main.py",
-   "sha256": "e143c8d1bdae221bb2327a51368b657637e2f08c4930a6688196c3f9e68f5855",
-   "tamanho": 11783
+   "origem": "programa/0.6.0/app/main.py",
+   "sha256": "78742911da49d42a8aef3787874ffbe0b0bd8066785ef0fe0ec94bc48d4396b8",
+   "tamanho": 12338
   },
   {
    "caminho": "app/pagina.py",
@@ -56,9 +56,9 @@
   },
   {
    "caminho": "app/static/app.js",
-   "origem": "programa/0.5.0/app/static/app.js",
-   "sha256": "ccf8167f24ce0621b33ec6050774c9af49a87de62673fb10ede8b4bd770f3c8a",
-   "tamanho": 31355
+   "origem": "programa/0.6.0/app/static/app.js",
+   "sha256": "2dc58d2c572756e03e6bd866fb681ec2b6c124325d0fe8ae523eb2cf4813959c",
+   "tamanho": 33082
   },
   {
    "caminho": "app/static/fontes/bricolage-grotesque-latin.woff2",
@@ -80,9 +80,9 @@
   },
   {
    "caminho": "app/static/index.html",
-   "origem": "programa/0.5.0/app/static/index.html",
-   "sha256": "80ac5a35f05e24ee678496fdae93f01dba766ed92e669a2ee1ca9731943c11bd",
-   "tamanho": 16380
+   "origem": "programa/0.6.0/app/static/index.html",
+   "sha256": "0a608e56d619a7091c3573be91b399cfd127548410a8c3f52a3651641f5a7973",
+   "tamanho": 17544
   },
   {
    "caminho": "app/static/logo.png",

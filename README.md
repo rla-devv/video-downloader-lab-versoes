@@ -7,10 +7,11 @@ Baixe vídeos de várias plataformas direto no seu computador. Desenvolvido por 
 ## Instalar (Windows 10 e 11)
 
 1. Baixe [Video Downloader Lab.zip](https://github.com/rla-devv/video-downloader-lab-versoes/raw/main/Video%20Downloader%20Lab.zip) e descompacte.
-2. Dê dois cliques em **Instalar Video Downloader Lab**. Não precisa ter o Python: ele baixa um Python só para o app
+2. Dê dois cliques em **Instalar Video Downloader Lab**. Ele instala em `C:\rla-lab\Video Downloader Lab`, a pasta de todos
+   os apps da RLA.dev, sem pedir administrador. Não precisa ter o Python: ele baixa um Python só para o app
    (o portátil oficial do python.org), o yt-dlp, o ffmpeg e a janela do programa, confere cada arquivo pelo SHA-256 e
    cria o atalho "Video Downloader Lab" na Área de Trabalho e no Menu Iniciar.
 
-Versão atual: **0.5.1**
+Versão atual: **0.6.0**
 
 Use só para conteúdo que você tem direito de baixar e respeite os termos de cada plataforma.
