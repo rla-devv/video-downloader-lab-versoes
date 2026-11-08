@@ -1,15 +1,14 @@
 {
  "app": "Video Downloader Lab",
- "versao": "0.7.0",
+ "versao": "0.7.1",
  "novidades": [
-  "Tudo do app fica junto em C:\\rla-lab\\Video Downloader Lab: os vídeos vão para a pasta Vídeos dentro dela.",
-  "Os vídeos que estavam em Downloads\\Video Downloader Lab mudam para lá sozinhos, uma vez (nada é apagado nem sobrescrito)."
+  "Ícone corrigido: sem as bordas pretas, no mesmo formato dos outros apps da RLA.dev."
  ],
  "arquivos": [
   {
    "caminho": "downloaderlab.pyw",
-   "origem": "programa/0.7.0/downloaderlab.pyw",
-   "sha256": "417e3af9896ae474cf116e801200033662757f69f7f24166b21fd69fb1c831e3",
+   "origem": "programa/0.7.1/downloaderlab.pyw",
+   "sha256": "60498b6c68b810e4a79c7aa939f5b5329e064953e7a65c07be08e654a212913c",
    "tamanho": 56219
   },
   {
@@ -25,15 +24,15 @@
    "tamanho": 7237
   },
   {
-   "caminho": "downloaderlab-2.ico",
-   "origem": "programa/0.3.0/downloaderlab-2.ico",
-   "sha256": "17262936c9b48bf577aaf7204293e6921b155e57b258adf3594de513d069e5a5",
-   "tamanho": 72886
+   "caminho": "downloaderlab-3.ico",
+   "origem": "programa/0.7.1/downloaderlab-3.ico",
+   "sha256": "57680c912a5bed1a12ce874e22b08335aaf01d8b79fa5f9b14ff8657ac43e754",
+   "tamanho": 81504
   },
   {
    "caminho": "app/__init__.py",
-   "origem": "programa/0.7.0/app/__init__.py",
-   "sha256": "45a00d19b46ee5efaf7a1c17235f907b68203cf7ecd5341a663d3bd8975b2e4e",
+   "origem": "programa/0.7.1/app/__init__.py",
+   "sha256": "d8a2590d230e1bb292f3603160ead9e198a16315f4c237d48c3b08661dcbd36e",
    "tamanho": 22
   },
   {
@@ -86,9 +85,9 @@
   },
   {
    "caminho": "app/static/logo.png",
-   "origem": "programa/0.3.0/app/static/logo.png",
-   "sha256": "ac9eecee087fccbda6e02acd6fa4862c4c5faf89fa3789b40d2db584ad9090de",
-   "tamanho": 9831
+   "origem": "programa/0.7.1/app/static/logo.png",
+   "sha256": "e5c6a0997224eba1f42e45a19cc093192876777f184b373b7477ef214813ab5d",
+   "tamanho": 11653
   },
   {
    "caminho": "app/static/style.css",
