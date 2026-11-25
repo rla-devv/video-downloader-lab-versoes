@@ -1,8 +1,9 @@
 {
  "app": "Video Downloader Lab",
- "versao": "0.7.2",
+ "versao": "0.8.0",
  "novidades": [
-  "Quando o site pede login (como o Reddit e o YouTube às vezes fazem), o app explica em português o que fazer e já abre \"Entrar com a sua conta\"."
+  "Vídeos do Reddit sem login: quando o Reddit recusa o acesso direto, o app abre o post como um visitante comum (no Edge ou Chrome, sem janela) e baixa o vídeo que aparece para qualquer pessoa. Não precisa de conta.",
+  "Arquivos de vídeos encontrados dentro de páginas saem com o título certo, em vez de nomes como \"HLSPlaylist\"."
  ],
  "arquivos": [
   {
@@ -31,15 +32,15 @@
   },
   {
    "caminho": "app/__init__.py",
-   "origem": "programa/0.7.2/app/__init__.py",
-   "sha256": "95cadca9f3dd564900412518efee94de6da0a2858b5d7fe7783492f1d22e1dd7",
+   "origem": "programa/0.8.0/app/__init__.py",
+   "sha256": "88f95809c233bb35bb4f61ca0e499894c911239d5d04b7cd4713cf896adfc3d5",
    "tamanho": 22
   },
   {
    "caminho": "app/downloader.py",
-   "origem": "programa/0.7.2/app/downloader.py",
-   "sha256": "e484e491adbba528b594f33713fb3965610bd36d28bc23032613cd144a3606b9",
-   "tamanho": 40595
+   "origem": "programa/0.8.0/app/downloader.py",
+   "sha256": "43cc6f10a862473d36931ec5e4ea1e552e36ddf1038aeab0bb0641a58b4cf435",
+   "tamanho": 43291
   },
   {
    "caminho": "app/main.py",
@@ -49,9 +50,9 @@
   },
   {
    "caminho": "app/pagina.py",
-   "origem": "programa/0.5.1/app/pagina.py",
-   "sha256": "bbfe28d0819c05f83113f46c708334093ddba6f1f536f40b3e24e578f576ba20",
-   "tamanho": 8203
+   "origem": "programa/0.8.0/app/pagina.py",
+   "sha256": "bb902e5b137f9b7998e0043233a5da0dc9c46f7155df22355c7aa29a35b320d8",
+   "tamanho": 11076
   },
   {
    "caminho": "app/static/app.js",
