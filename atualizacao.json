@@ -1,8 +1,8 @@
 {
  "app": "Video Downloader Lab",
- "versao": "0.7.1",
+ "versao": "0.7.2",
  "novidades": [
-  "Ícone corrigido: sem as bordas pretas, no mesmo formato dos outros apps da RLA.dev."
+  "Quando o site pede login (como o Reddit e o YouTube às vezes fazem), o app explica em português o que fazer e já abre \"Entrar com a sua conta\"."
  ],
  "arquivos": [
   {
@@ -31,15 +31,15 @@
   },
   {
    "caminho": "app/__init__.py",
-   "origem": "programa/0.7.1/app/__init__.py",
-   "sha256": "d8a2590d230e1bb292f3603160ead9e198a16315f4c237d48c3b08661dcbd36e",
+   "origem": "programa/0.7.2/app/__init__.py",
+   "sha256": "95cadca9f3dd564900412518efee94de6da0a2858b5d7fe7783492f1d22e1dd7",
    "tamanho": 22
   },
   {
    "caminho": "app/downloader.py",
-   "origem": "programa/0.5.1/app/downloader.py",
-   "sha256": "f58d335143c8cf72649c226193233dafe3fb7814152a42b5e2b9f0f1e045b245",
-   "tamanho": 38742
+   "origem": "programa/0.7.2/app/downloader.py",
+   "sha256": "e484e491adbba528b594f33713fb3965610bd36d28bc23032613cd144a3606b9",
+   "tamanho": 40595
   },
   {
    "caminho": "app/main.py",
@@ -55,9 +55,9 @@
   },
   {
    "caminho": "app/static/app.js",
-   "origem": "programa/0.7.0/app/static/app.js",
-   "sha256": "0c9b4882d8ff27ece44d572f6f977b4cb48cac19d375c22799527d8d9d700eab",
-   "tamanho": 34083
+   "origem": "programa/0.7.2/app/static/app.js",
+   "sha256": "b39535349dcd923490bbb054a7e73a6ce3da7e827bf50edec0ae5d044f2ca028",
+   "tamanho": 34235
   },
   {
    "caminho": "app/static/fontes/bricolage-grotesque-latin.woff2",
